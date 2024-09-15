@@ -15,7 +15,7 @@ on:
 
 jobs:
   run-tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: Run autotests
     steps:
       - name: Checkout code
@@ -60,7 +60,7 @@ jobs:
 
       - name: Install Allure
         run: |
-          wget https://github.com/allure-framework/allure2/releases/download/2.30.0/allure-2.30.0.tgz
+          curl -sL https://github.com/allure-framework/allure2/releases/download/2.30.0/allure-2.30.0.tgz -o allure-2.30.0.tgz
           tar -zxvf allure-2.30.0.tgz -C /opt/
           ln -s /opt/allure-2.30.0/bin/allure /usr/bin/allure
 
