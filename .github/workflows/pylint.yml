@@ -49,12 +49,6 @@ jobs:
         run: pytest -m regression --alluredir=allure-results
         continue-on-error: true
 
-      - name: Install Java
-        uses: actions/setup-java@v3
-        with:
-           distribution: 'microsoft'
-           java-version: '17'
-
       - name: Install Allure
         run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.30.0/allure-2.30.0.tgz && sudo tar -zxvf allure-2.30.0.tgz -C /opt/ && sudo ln -s /opt/allure-2.30.0/bin/allure /usr/bin/allure
 
