@@ -60,9 +60,10 @@ jobs:
 
       - name: Install Allure
         run: |
+          mkdir -p $HOME/allure
           curl -sL https://github.com/allure-framework/allure2/releases/download/2.30.0/allure-2.30.0.tgz -o allure-2.30.0.tgz
-          tar -zxvf allure-2.30.0.tgz -C /opt/
-          ln -s /opt/allure-2.30.0/bin/allure /usr/bin/allure
+          tar -zxvf allure-2.30.0.tgz -C $HOME/allure
+          echo "$HOME/allure/allure-2.30.0/bin" >> $GITHUB_ENV
 
       - name: Generate Allure report
         run: |
