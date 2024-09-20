@@ -55,7 +55,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Allure
+        - name: Install Allure
         run: |
           mkdir -p $HOME/allure
           curl -sL https://github.com/allure-framework/allure2/releases/download/2.30.0/allure-2.30.0.tgz -o allure-2.30.0.tgz
@@ -66,9 +66,4 @@ jobs:
         run: |
           allure generate -c allure-results -o allure-report
 
-      - name: Upload Allure report
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-report
-          path: allure-report
           retention-days: 1
